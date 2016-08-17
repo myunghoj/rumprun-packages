@@ -59,7 +59,7 @@ One of the objectives of this project is to run `jetty` web server on Rump. `jet
 make images/jar
 ````
 
-It makes a writeable file system image with files in 'jar/*' to 'images/jar.ffs'.
+It makes a writeable file system image with files in `jar/*` to `images/jar.ffs`.
 
 You can run `jetty` demo application by following command below.
 
