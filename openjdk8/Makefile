@@ -15,21 +15,12 @@ NASHORN_VER=4195ebe2576e
 
 export COMPILER_WARNINGS_FATAL=false
 
-all: $(RUMPRUN_PKGS_DIR)/lib/libffi.a $(RUMPRUN_PKGS_DIR)/lib/libfreetype.a $(RUMPRUN_PKGS_DIR)/lib/libasound.a \
-    bin/java images/jre.iso images/jar.ffs
-
-.NOTPARALLEL: $(RUMPRUN_PKGS_DIR)/lib/libfreetype.a
-$(RUMPRUN_PKGS_DIR)/lib/libfreetype.a:
-	$(MAKE) -C ../freetype
+all: $(RUMPRUN_PKGS_DIR)/lib/libffi.a bin/java images/jre.iso images/jar.ffs
 
 .NOTPARALLEL: $(RUMPRUN_PKGS_DIR)/lib/libffi.a
 $(RUMPRUN_PKGS_DIR)/lib/libffi.a:
 	$(MAKE) -C ../libffi
 
-.NOTPARALLEL: $(RUMPRUN_PKGS_DIR)/lib/libasound.a
-$(RUMPRUN_PKGS_DIR)/lib/libasound.a:
-	$(MAKE) -C ../libalsa
-	
 bin/java: build/javadist/bin/java
 	mkdir -p bin
 	cp $(JAVA_BIN) $@
