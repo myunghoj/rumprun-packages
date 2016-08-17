@@ -45,6 +45,7 @@ env:
       #    - PACKAGE=sqlite
       #    - PACKAGE=tor
       #    - PACKAGE=apache2
+    - PACKAGE=libffi
     - PACKAGE=openjdk8
 
 
