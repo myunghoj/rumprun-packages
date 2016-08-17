@@ -53,15 +53,15 @@ You will see `Hello World!` message on qemu window.
 jetty
 -----
 
-One of the objectives of this project is to run `jetty` web server on Rump. `jetty` package is not included so you can download it from (http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-distribution/9.3.11.v20160721/jetty-distribution-9.3.11.v20160721.tar.gz) and extract files in `/jar/jetty`. Most of java web applications are needed to extract and write files on image. So, you need to create writable image with `jetty`.
+One of the objectives of this project is to run `jetty` web server on Rump. `jetty` package is not included so you can download it from (http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-distribution/9.3.11.v20160721/jetty-distribution-9.3.11.v20160721.tar.gz) and extract files to `/jar/jetty`. Most of java web applications are needed to extract and write files on image. So, you need to create writable image with `jetty`.
 
 ````
 make images/jar
 ````
 
-It makes a writeable file system image with 'jar/*' to 'images/jar.ffs'.
+It makes a writeable file system image with files in 'jar/*' to 'images/jar.ffs'.
 
-You can test `jetty` demo application by following command below.
+You can run `jetty` demo application by following command below.
 
 ````
 rumprun xen -i -M 1024 \
@@ -77,7 +77,7 @@ rumprun xen -i -M 1024 \
     jetty.home=/jar/jetty jetty.base=/jar/jetty/demo-base
 ````
 
-`java.io.tmpdir` should be set as writable path.
+`java.io.tmpdir` should be set as writable path because `jetty` extracts war file to the path.
 
 
 Known issues
