@@ -82,9 +82,9 @@ images/jar.ffs:
 .PHONY: clean
 clean:
 	-$(MAKE) -C build clean
-	rm -f bin/*
-	rm -rf build/javadist
+	rm -f bin/java
 	rm -f images/jre.iso
+	rm -f images/jar.ffs
 
 .PHONY: distclean
 distclean: clean

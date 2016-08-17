@@ -1021,8 +1021,8 @@ diff -ruN -x '.*' old/hotspot/src/share/vm/prims/nativeLookup.cpp new/hotspot/sr
  static address lookup_special_native(char* jni_name) {
 diff -ruN -x '.*' old/hotspot/src/share/vm/prims/nativeSymbolMap.cpp new/hotspot/src/share/vm/prims/nativeSymbolMap.cpp
 --- old/hotspot/src/share/vm/prims/nativeSymbolMap.cpp	1969-12-31 17:00:00.000000000 -0700
-+++ new/hotspot/src/share/vm/prims/nativeSymbolMap.cpp	2016-08-16 22:17:21.309429377 -0600
-@@ -0,0 +1,944 @@
++++ new/hotspot/src/share/vm/prims/nativeSymbolMap.cpp	2016-08-17 14:28:45.567750021 -0600
+@@ -0,0 +1,945 @@
 +#include "nativeSymbolMap.h"
 +#include <unordered_map>
 +#include <string>
@@ -1036,6 +1036,7 @@ diff -ruN -x '.*' old/hotspot/src/share/vm/prims/nativeSymbolMap.cpp new/hotspot
 +    if(symbol_map.empty()) {
 +        create_symbol_map();
 +    } 
++    // to avoid null check; may be a problem later
 +    return (void*) 0xdeadbeef;
 +}
 +
