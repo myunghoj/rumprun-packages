@@ -26,7 +26,7 @@ bin/java: build/javadist/bin/java
 	cp $(JAVA_BIN) $@
 
 build/javadist/bin/java: build/Makefile
-	$(MAKE) -C build LOG=debug
+	$(MAKE) -C build LOG=debug JOBS=2
 	$(MAKE) -C build install
 
 OPENJDK_CONF_ENV += \
@@ -47,7 +47,6 @@ OPENJDK_CONF_OPTS += \
 	--with-extra-cflags="-I${RUMPRUN_PKGS_DIR}/include -I${RUMPRUN_SYSROOT}/include \
        	-I$(shell pwd)/build/common/include" \
 	--with-extra-cxxflags="-Wno-literal-suffix -Wno-narrowing -I${RUMPRUN_SYSROOT}/include/c++" \
-	--without-jobs \
 	--without-freetype \
 	--without-x
 
