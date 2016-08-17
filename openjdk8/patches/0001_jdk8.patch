@@ -431,3 +431,14 @@ diff -ruN -x jdk -x hotspot -x '.*' old/make/common/NativeCompilation.gmk new/ma
    endif
  
    ifneq (,$$($1_PROGRAM))
+diff -ruN -x jdk -x hotspot -x '.*' old/make/MakeHelpers.gmk new/make/MakeHelpers.gmk
+--- old/make/MakeHelpers.gmk	2016-08-16 10:50:33.141525365 -0600
++++ new/make/MakeHelpers.gmk	2016-08-17 02:02:52.136958906 -0600
+@@ -145,6 +145,7 @@
+ 
+ # Hook to be called as the very first thing when running a normal build
+ define AtMakeStart
++        echo $(MAKEFLAGS)
+ 	$(if $(findstring --jobserver,$(MAKEFLAGS)),$(error make -j is not supported, use make JOBS=n))
+ 	$(call CheckEnvironment)
+ 	@$(PRINTF) $(LOG_INFO) "Running make as '$(MAKE) $(MFLAGS) $(MAKE_ARGS)'\n"
