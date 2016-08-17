@@ -46,7 +46,6 @@ env:
     - PACKAGE=libffi
     - PACKAGE=openjdk8
 
-
       #notifications:
       #  irc:
       #    channels:
