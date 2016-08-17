@@ -26,7 +26,7 @@ bin/java: build/javadist/bin/java
 	cp $(JAVA_BIN) $@
 
 build/javadist/bin/java: build/Makefile
-	$(MAKE) -C build LOG=debug
+	$(MAKE) -C build LOG=debug JOBS=2
 	$(MAKE) -C build install
 
 OPENJDK_CONF_ENV += \
