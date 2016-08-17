@@ -1,8 +1,6 @@
 sudo: required
 dist: trusty
 language: generic
-jdk:
-    - openjdk7
 cache:
   directories:
     - $HOME/.ccache
