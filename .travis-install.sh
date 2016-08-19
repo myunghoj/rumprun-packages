@@ -1,8 +1,9 @@
 #!/bin/bash
 # Install additional build dependencies for packages
 # mysql: makefs
+sudo apt-get update
 sudo apt-get install makefs
-sudo apt-get install openjdk-8-jdk
+sudo apt-get install openjdk-7-jdk
 
 # Build and install rumprun toolchain from source
 RUMPRUN_PLATFORM=${RUMPRUN_PLATFORM:-hw}
