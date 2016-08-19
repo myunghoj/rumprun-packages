@@ -61,8 +61,6 @@ make images/jar
 
 It makes a writeable file system image with files in `jar/*` to `images/jar.ffs`.
 
-<<<<<<< HEAD
-=======
 A bridge should be created to access the internet. You can make one using Linux bridge or Open vSwitch like below.
 
 ````
@@ -71,7 +69,6 @@ sudo ifconfig xenbr0 up
 sudo ifconfig xenbr0 10.0.0.5/24
 ````
 
->>>>>>> master
 You can run `jetty` demo application by following command below.
 
 ````
@@ -88,11 +85,8 @@ rumprun xen -i -M 1024 \
     jetty.home=/jar/jetty jetty.base=/jar/jetty/demo-base
 ````
 
-<<<<<<< HEAD
-=======
 Change `xen` to kvm or qemu depending on your VM hypervisor.
 
->>>>>>> master
 `java.io.tmpdir` should be set as writable path because `jetty` extracts war file to the path.
 
 
